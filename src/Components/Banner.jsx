@@ -1,5 +1,5 @@
 import React from "react";
-import BannerImage from "../assets/Images/image 14.png";
+import Images from "../assets/Images/images.jsx";
 import Button from "./Button";
 
 function Banner() {
@@ -21,7 +21,7 @@ function Banner() {
           </div>
         </div>
         <div className="w-1/2w-full">
-          <img src={BannerImage} alt="Blog Logo" className="mx-auto" />
+          <img src={Images.banner} alt="Blog Logo" className="mx-auto" />
         </div>
       </div>
     </div>

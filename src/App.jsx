@@ -7,38 +7,32 @@ import MenuCard from "./Components/MenuCard";
 import PromoCard from "./Components/PromoCard";
 import ReviewCard from "./Components/ReviewCard";
 import LocationCard from "./Components/LocationCard";
-import ayamRica from "./assets/Images/image 16.png";
-import ayamWoku from "./assets/Images/Ayam Woku.png";
-import cakalangTinorasak from "./assets/Images/Cakalang Tinorasak.png";
-import cumiHitam from "./assets/Images/Cumi Hitam.png";
-import perkedelJagung from "./assets/Images/image 17.png";
-import laukFrozen from "./assets/Images/image 19.png";
-import cakalangRabe from "./assets/Images/image 21.png";
+import Images from "./assets/Images/images.jsx";
 
 function App() {
   const menuItems = [
-    { image: ayamRica, name: "Ayam Rica" },
-    { image: ayamWoku, name: "Ayam Woku" },
-    { image: cakalangTinorasak, name: "Cakalang Tinorasak" },
-    { image: cumiHitam, name: "Cumi Hitam" },
-    { image: perkedelJagung, name: "Perkedel Jagung" },
-    { image: laukFrozen, name: "Lauk Frozen" },
-    { image: cakalangRabe, name: "Cakalang Rabe" },
+    { image: Images.ayamRica, name: "Ayam Rica" },
+    { image: Images.cumiHitam, name: "Cumi Hitam" },
+    { image: Images.cakalangTinorasak, name: "Cakalang Tinorasak" },
+    { image: Images.perkedelJagung, name: "Perkedel Jagung" },
+    { image: Images.ayamWoku, name: "Ayam Woku" },
+    { image: Images.laukFrozen, name: "Lauk Frozen" },
+    { image: Images.cakalangRabe, name: "Cakalang Rabe" },
   ];
   const promoItems = [
     {
-      image: ayamRica,
+      image: Images.ayamRica,
       promoName: "Buy 2 Get 1",
       promoDetail: "Buy 2 and get 1 free, applicable to select variants.",
     },
     {
-      image: ayamWoku,
+      image: Images.ayamWoku,
       promoName: "Discount 20%",
       promoDetail:
         "Get a 20% discount on all purchases this weekend. Minimum purchase Rp. 50.000",
     },
     {
-      image: cakalangTinorasak,
+      image: Images.cakalangTinorasak,
       promoName: "Bundle Deal",
       promoDetail:
         "Purchase Ayam Woku and Ayam Rica can save 30% on the total cost.",
@@ -48,58 +42,57 @@ function App() {
     {
       reviewName: "Jennifer",
       reviewDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Such a good value for your money. Really good Manadonese food. Well recommended!Such a good value for your money. Really good Manadonese food. Well recommended!",
     },
     {
-      reviewName: "A**********a",
-      reviewDetail: "Cakalangnya terbaikkkkkkkk, the best cakalang everrrr",
+      reviewName: "A***a",
+      reviewDetail:
+        "Cakalangnya terbaikkkkkkkkkk, the best cakalang everrrrrrr",
     },
     {
       reviewName: "Nadia",
       reviewDetail:
-        "Dari semua menu manadong, ini kesukaan suami saya. Ngebantu gak sempet masak. Tinggal masak nasi, microwave ayam rica trs BUDUM DUNG TESSS... beres deh tanggung jawab",
+        "Dari semua menu manadong, ini kesukaan suami saya. Ngebantu banget kalo lg kepepet gak sempet masak. Tinggal masak nasi, microwave ayam rica trs BUDUM DUNG TESS.. beres deh tanggung jawab >.<",
     },
   ];
   const locationItems = [
     {
       locationName: "Senopati, Petogongan",
       locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Santa Modern Market, Lt.1, Blok CKS 5, Jl. Cipaku I No.1, Petogogan, Jakarta Selatan",
     },
     {
       locationName: "Kebun Jeruk / Tanjung Duren",
       locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Komplek Ruko Greenville Maisonet Blok D Nomor 9, RT.7/RW.5, North Tanjung Duren, Jakarta Barat",
     },
     {
       locationName: "Food Plaza PIK",
       locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Food Plaza PIK FMA-16, Kamal Muara, Penjaringan Jakarta Utara",
     },
     {
       locationName: "Kuningan - D'Kanteen",
-      locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+      locationDetail: "D Kanteen, Jl. Komando Raya No.18, DKI Jakarta 12920",
     },
     {
       locationName: "Bintaro, Thelapan Square",
       locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Jl. Jurang Mangu Bar. No.38, Kota Tangerang Selatan, Banten",
     },
     {
       locationName: "Gading Serpong",
       locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Ruko Golden 8, Jl. Ki Hajar Dewantara Jl. Boulevard Raya Gading Serpong No.25, West Pakulonan, Kelapa Dua, Tangerang Regency, Banten 15810",
     },
     {
       locationName: "Cipete",
       locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Jl. Cipete Raya No.74c, RW.3, Cipete Jakarta Selatan 12410",
     },
     {
       locationName: "Meteng",
-      locationDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!",
+      locationDetail: "Jl. H. Agus Salim No.60, Menteng, Jakarta Pusat 10350",
     },
   ];
   return (
@@ -119,8 +112,8 @@ function App() {
           </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {menuItems.map((menuItem) => (
-            <MenuCard key={menuItem.name} {...menuItem} />
+          {menuItems.map((menu) => (
+            <MenuCard image={menu.image} name={menu.name} />
           ))}
         </div>
         <div className="py-5">
@@ -136,8 +129,12 @@ function App() {
         </div>
         <div>
           <div>
-            {promoItems.map((promoItem) => (
-              <PromoCard key={promoItem.name} {...promoItem} />
+            {promoItems.map((promo) => (
+              <PromoCard
+                image={promo.image}
+                promoName={promo.promoName}
+                promoDetail={promo.promoDetail}
+              />
             ))}
           </div>
         </div>
@@ -151,8 +148,11 @@ function App() {
         </div>
         <div>
           <div className="">
-            {reviewItems.map((reviewItem) => (
-              <ReviewCard key={reviewItem.name} {...reviewItem} />
+            {reviewItems.map((review) => (
+              <ReviewCard
+                reviewName={review.reviewName}
+                reviewDetail={review.reviewDetail}
+              />
             ))}
           </div>
         </div>
@@ -165,8 +165,11 @@ function App() {
           </h1>
         </div>
         <div className="">
-          {locationItems.map((locationItem) => (
-            <LocationCard key={locationItem.name} {...locationItem} />
+          {locationItems.map((location) => (
+            <LocationCard
+              locationName={location.name}
+              locationDetail={location.locationDetail}
+            />
           ))}
         </div>
       </div>

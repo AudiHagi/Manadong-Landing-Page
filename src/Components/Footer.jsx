@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import Logo from "../assets/Images/image 22.svg";
+import Images from "../assets/Images/images.jsx";
 
 function Footer() {
   return (
@@ -9,7 +8,7 @@ function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-32">
         <div className="w-full flex flex-col items-start">
           <Link to="/">
-            <img src={Logo} alt="Company Logo" className="w-24 h-24" />
+            <img src={Images.logo} alt="Company Logo" className="w-24 h-24" />
           </Link>
           <p className="text-white text-sm">
             Copyright 2023 PT Bogadong Anugerah Indonesia

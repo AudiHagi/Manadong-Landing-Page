@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/Images/image 22.svg";
+import Images from "../assets/Images/images.jsx";
 
 function Header() {
   const menuList = [
@@ -11,7 +11,7 @@ function Header() {
     },
     {
       id: 2,
-      title: "Eatry",
+      title: "Eatery",
       link: "/",
     },
     {
@@ -29,14 +29,14 @@ function Header() {
     <div className="flex items-center bg-slate-600 justify-between">
       <div>
         <Link to="/">
-          <img src={Logo} alt="Blog Logo" />
+          <img src={Images.logo} alt="Blog Logo" />
         </Link>
       </div>
       <div className="flex gap-4 items-end">
         {menuList.map((menu) => (
           <div>
             <Link to={menu.link}>
-              <h2 className="text-swhite hover:text-yellow-500 text-[15px] cursor-pointer">
+              <h2 className="text-white hover:text-manadong text-[15px] cursor-pointer">
                 {menu.title}
               </h2>
             </Link>
