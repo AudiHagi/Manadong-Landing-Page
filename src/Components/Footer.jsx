@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import Images from "../assets/Images/images.jsx";
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 py-8 px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-32">
-        <div className="w-full flex flex-col items-start">
+    <footer className="bg-navbar py-2 px-4 text-[15px]">
+      <div className="grid grid-cols-5">
+        <div className="col-span-2 w-fit flex flex-col items-start justify-center">
           <Link to="/">
-            <img src={Images.logo} alt="Company Logo" className="w-24 h-24" />
+            <img src={Images.logo} alt="Manadong Logo" className="w-24 h-24" />
           </Link>
-          <p className="text-white text-sm">
-            Copyright 2023 PT Bogadong Anugerah Indonesia
+          <p className="text-white text-sm mt-2">
+            Copyright © 2023 PT Bogadong Anugerah Indonesia
           </p>
         </div>
-        <div className="w-full flex flex-col text-start">
+        <div className="col-span-2 w-fit flex flex-col text-start justify-center">
           <p className="text-white font-medium">Contact Us</p>
           <div className="py-3">
             <p className="text-white font-medium">
@@ -31,8 +32,8 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div className="w-full flex flex-col text-start">
-          <p className="text-white font-medium">Available On</p>
+        <div className="w-fit flex flex-col text-start justify-center">
+          <p className="text-white font-medium mt-2">Available On</p>
           <div className="py-3">
             <Link to="/GrabFoodOutlet">
               <p className="text-white underline">Grab Food</p>
@@ -45,6 +46,15 @@ function Footer() {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="mt-2 text-2xl flex space-x-4 justify-center">
+        <Link to="https://api.whatsapp.com/send?phone=628111009115&text=Hi%2C%20aku%20mau%20pesen%20Manadongnya%20ya!%20yang%20jelas%20%23NikmatnyaGaPakeRibet!!">
+          <FaWhatsapp className="text-white" />
+        </Link>
+        <FaFacebook className="text-white" />
+        <Link to="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fmanadong.id%2F&is_from_rle">
+          <FaInstagram className="text-white" />
+        </Link>
       </div>
     </footer>
   );

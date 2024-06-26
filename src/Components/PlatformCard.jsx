@@ -3,9 +3,12 @@ import Button from "../Components/Button";
 
 function PlatformCard({ image, link }) {
   return (
-    <div className="w-full flex flex-col items-center">
-      <img src={image} className="w-48 h-56 object-cover rounded-lg mb-2" />
-      <Button link={link} />
+    <div className="w-fit rounded-lg">
+      <img
+        src={image}
+        className="w-40 h-40 object-cover rounded-full overflow-hidden mb-12"
+      />
+      <Button link={link} isLight={false} />
     </div>
   );
 }

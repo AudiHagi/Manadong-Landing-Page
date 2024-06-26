@@ -1,4 +1,6 @@
 import "./App.css";
+import Popup from "reactjs-popup";
+import Images from "./assets/Images/images.jsx";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Banner from "./Components/Banner";
@@ -7,32 +9,81 @@ import MenuCard from "./Components/MenuCard";
 import PromoCard from "./Components/PromoCard";
 import ReviewCard from "./Components/ReviewCard";
 import LocationCard from "./Components/LocationCard";
-import Images from "./assets/Images/images.jsx";
+import DetailMenuCard from "./Components/DetailMenuCard.jsx";
 
 function App() {
   const menuItems = [
-    { image: Images.ayamRica, name: "Ayam Rica" },
-    { image: Images.cumiHitam, name: "Cumi Hitam" },
-    { image: Images.cakalangTinorasak, name: "Cakalang Tinorasak" },
-    { image: Images.perkedelJagung, name: "Perkedel Jagung" },
-    { image: Images.ayamWoku, name: "Ayam Woku" },
-    { image: Images.laukFrozen, name: "Lauk Frozen" },
-    { image: Images.cakalangRabe, name: "Cakalang Rabe" },
+    {
+      id: 1,
+      image: Images.ayamRica,
+      name: "Ayam Rica",
+      detail: "Ayam pedas khas Manado",
+      price: 50000,
+      isNew: true,
+    },
+    {
+      id: 2,
+      image: Images.cumiHitam,
+      name: "Cumi Hitam",
+      detail: "Cumi dengan tinta hitam",
+      price: 55000,
+      isNew: false,
+    },
+    {
+      id: 3,
+      image: Images.cakalangTinorasak,
+      name: "Cakalang Tinorasak",
+      detail: "Ikan cakalang pedas",
+      price: 60000,
+      isNew: false,
+    },
+    {
+      id: 4,
+      image: Images.perkedelJagung,
+      name: "Perkedel Jagung",
+      detail: "Perkedel jagung manis",
+      price: 65000,
+      isNew: false,
+    },
+    {
+      id: 5,
+      image: Images.ayamWoku,
+      name: "Ayam Woku",
+      detail: "Ayam dengan bumbu woku",
+      price: 70000,
+      isNew: false,
+    },
+    {
+      id: 6,
+      image: Images.laukFrozen,
+      name: "Lauk Frozen",
+      detail: "Aneka lauk beku",
+      price: 75000,
+      isNew: false,
+    },
+    {
+      id: 7,
+      image: Images.cakalangRabe,
+      name: "Cakalang Rabe",
+      detail: "Ikan cakalang pedas",
+      price: 80000,
+      isNew: false,
+    },
   ];
   const promoItems = [
     {
-      image: Images.ayamRica,
+      image: Images.buy2Get1,
       promoName: "Buy 2 Get 1",
       promoDetail: "Buy 2 and get 1 free, applicable to select variants.",
     },
     {
-      image: Images.ayamWoku,
+      image: Images.diskon20,
       promoName: "Discount 20%",
       promoDetail:
         "Get a 20% discount on all purchases this weekend. Minimum purchase Rp. 50.000",
     },
     {
-      image: Images.cakalangTinorasak,
+      image: Images.bundleDeal,
       promoName: "Bundle Deal",
       promoDetail:
         "Purchase Ayam Woku and Ayam Rica can save 30% on the total cost.",
@@ -42,7 +93,7 @@ function App() {
     {
       reviewName: "Jennifer",
       reviewDetail:
-        "Such a good value for your money. Really good Manadonese food. Well recommended!Such a good value for your money. Really good Manadonese food. Well recommended!",
+        "Such a good value for your money. Really good Manadonese food. Well recommended!",
     },
     {
       reviewName: "A***a",
@@ -97,7 +148,7 @@ function App() {
   ];
   return (
     <div className="min-h-screen">
-      <div className="bg-navbar px-8 md:px-14 lg:px-36">
+      <div className="bg-navbar px-36">
         <Header />
       </div>
 
@@ -105,76 +156,105 @@ function App() {
         <Banner />
       </div>
 
-      <div className="py-8 px-8 md:px-14 lg:px-36">
-        <div className="mb-4">
-          <h1 className="font-bold text-navbar text-start text-2xl">
-            <span className="underline decoration-manadong">Our</span> Menu
+      <div className="py-8 px-36">
+        <div className="mb-8">
+          <h1 className="font-bold text-navbar text-start text-[24px]">
+            <span className="border-b-4 border-b-manadong">Our</span> Menu
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-5 gap-x-4 gap-y-4">
           {menuItems.map((menu) => (
-            <MenuCard image={menu.image} name={menu.name} />
+            <Popup
+              trigger={
+                <div>
+                  <MenuCard
+                    image={menu.image}
+                    name={menu.name}
+                    isNew={menu.isNew}
+                  />
+                </div>
+              }
+              modal
+            >
+              {(close) => (
+                <div className="relative w-screen h-screen" onClick={close}>
+                  <div className="absolute inset-0 bg-black opacity-50"></div>
+                  <div className="relative z-10 flex items-center justify-center h-full">
+                    <DetailMenuCard
+                      className="p-4 bg-white shadow-lg rounded-lg"
+                      image={menu.image}
+                      menuName={menu.name}
+                      menuDetail={menu.detail}
+                      menuPrice={menu.price}
+                      onClick={close}
+                    />
+                  </div>
+                </div>
+              )}
+            </Popup>
           ))}
         </div>
         <div className="py-5">
-          <Button link="/OrderNow" />
+          <Button link="/OrderNow" isLight={true} />
         </div>
       </div>
 
-      <div className="flex bg-pink h-full px-8 md:px-14 lg:px-36">
-        <div className="w-1/2 flex items-center">
-          <h1 className="font-bold text-navbar text-start text-2xl">
-            <span className="underline decoration-manadong">Pro</span>motion
+      <div className="bg-pink h-full px-36 py-8 grid grid-cols-3 gap-4">
+        <div className="flex items-center">
+          <h1 className="font-bold text-navbar text-start text-[24px]">
+            <span className="border-b-4 border-b-manadong">Pro</span>motion
           </h1>
         </div>
-        <div>
-          <div>
-            {promoItems.map((promo) => (
-              <PromoCard
-                image={promo.image}
-                promoName={promo.promoName}
-                promoDetail={promo.promoDetail}
-              />
-            ))}
-          </div>
+        <div className="col-span-2 grid grid-cols-3 gap-x-4 items-start">
+          {promoItems.map((promo) => (
+            <PromoCard
+              image={promo.image}
+              promoName={promo.promoName}
+              promoDetail={promo.promoDetail}
+            />
+          ))}
         </div>
       </div>
 
-      <div className="bg-lightblue py-8 px-8 md:px-14 lg:px-36">
-        <div className="mb-4">
-          <h1 className="font-bold text-navbar text-start text-2xl">
-            <span className="underline decoration-manadong">Rev</span>iews
+      <div className="bg-lightBlue py-8 px-36">
+        <div className="mb-8">
+          <h1 className="font-bold text-navbar text-start text-[24px]">
+            <span className="border-b-4 border-b-manadong">Rev</span>iews
           </h1>
         </div>
-        <div>
-          <div className="">
-            {reviewItems.map((review) => (
-              <ReviewCard
-                reviewName={review.reviewName}
-                reviewDetail={review.reviewDetail}
-              />
-            ))}
-          </div>
+        <div className="grid grid-cols-3 gap-x-4">
+          {reviewItems.map((review) => (
+            <ReviewCard
+              reviewName={review.reviewName}
+              reviewDetail={review.reviewDetail}
+            />
+          ))}
+        </div>
+        <div className="mt-8">
+          <button className="w-3 h-3 rounded-full bg-navbar"></button>
+          <button className="w-3 h-3 rounded-full bg-white ml-2"></button>
+          <button className="w-3 h-3 rounded-full bg-white ml-2"></button>
+          <button className="w-3 h-3 rounded-full bg-white ml-2"></button>
         </div>
       </div>
 
-      <div className="py-8 px-8 md:px-14 lg:px-36">
-        <div className="mb-4">
-          <h1 className="font-bold text-navbar text-start text-2xl">
-            <span className="underline decoration-manadong">Loc</span>ations
+      <div className="py-8 px-36">
+        <div className="mb-8">
+          <h1 className="font-bold text-navbar text-start text-[24px]">
+            <span className="border-b-4 border-b-manadong">Loc</span>ations
           </h1>
         </div>
-        <div className="">
+        <div className="grid grid-cols-3 gap-4">
           {locationItems.map((location) => (
             <LocationCard
-              locationName={location.name}
+              locationName={location.locationName}
               locationDetail={location.locationDetail}
             />
           ))}
         </div>
       </div>
 
-      <div className="bg-navbar px-8 md:px-14 lg:px-36">
+      <div className="bg-navbar px-36">
         <Footer />
       </div>
     </div>

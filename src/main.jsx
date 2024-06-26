@@ -6,6 +6,7 @@ import "./index.css";
 import OrderNow from "./Pages/OrderNow.jsx";
 import GrabFoodOutlet from "./Pages/GrabFoodOutlet.jsx";
 import AboutUs from "./Pages/AboutUs.jsx";
+import MenuDetail from "./Pages/MenuDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +22,12 @@ const router = createBrowserRouter([
     element: <AboutUs />,
   },
   {
-    path: "OrderNow/GrabFoodOutlet",
+    path: "GrabFoodOutlet",
     element: <GrabFoodOutlet />,
   },
   {
-    path: "GrabFoodOutlet",
-    element: <GrabFoodOutlet />,
+    path: "/detail/:id",
+    element: <MenuDetail />,
   },
 ]);
 

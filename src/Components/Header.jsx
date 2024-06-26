@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Images from "../assets/Images/images.jsx";
 
 function Header() {
@@ -22,21 +22,21 @@ function Header() {
     {
       id: 4,
       title: "About Us",
-      link: "AboutUs",
+      link: "/AboutUs",
     },
   ];
   return (
-    <div className="flex items-center bg-slate-600 justify-between">
+    <div className="py-2 flex items-center bg-slate-600 justify-between">
       <div>
         <Link to="/">
-          <img src={Images.logo} alt="Blog Logo" />
+          <img src={Images.logo} alt="Manadong Logo" />
         </Link>
       </div>
       <div className="flex gap-4 items-end">
         {menuList.map((menu) => (
           <div>
             <Link to={menu.link}>
-              <h2 className="text-white hover:text-manadong text-[15px] cursor-pointer">
+              <h2 className="text-white hover:text-manadong text-[18px] cursor-pointer">
                 {menu.title}
               </h2>
             </Link>

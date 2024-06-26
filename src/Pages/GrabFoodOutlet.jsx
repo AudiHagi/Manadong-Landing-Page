@@ -47,18 +47,18 @@ function GrabFoodOutlet() {
   ];
   return (
     <div className="min-h-screen">
-      <div className="bg-navbar px-8 md:px-14 lg:px-36">
+      <div className="bg-navbar px-36">
         <Header />
       </div>
-      <div className="py-8 px-8 md:px-14 lg:px-36">
+      <div className="py-8 px-36">
         <div className="mb-4">
           <h1 className="font-bold text-navbar text-start text-2xl">
-            <span className="underline decoration-manadong">Gra</span>bFoot
+            <span className="border-b-4 border-b-manadong">Gra</span>bFoot
             Outlet
           </h1>
         </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start md:space-y-0 md:space-x-6">
-          <div class="md:w-1/2">
+        <div className="flex items-center gap-8">
+          <div className="w-1/2">
             {locationItems.map((location) => (
               <OutletCard
                 locationName={location.locationName}
@@ -66,12 +66,12 @@ function GrabFoodOutlet() {
               />
             ))}
           </div>
-          <div class="md:w-1/2">
-            <img src={BannerImage} alt="Blog Logo" className="mx-auto" />
+          <div className="w-1/2">
+            <img src={BannerImage} alt="Banner" className="h-fit" />
           </div>
         </div>
       </div>
-      <div className="bg-navbar px-8 md:px-14 lg:px-36">
+      <div className="bg-navbar px-36">
         <Footer />
       </div>
     </div>
