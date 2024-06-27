@@ -15,7 +15,7 @@ function AboutUs() {
             <span className="border-b-4 border-b-manadong">Abo</span>ut Us
           </h1>
         </div>
-        <div className="bg-white text-black shadow-md rounded-lg mx-auto flex flex-row">
+        <div className="bg-white text-black rounded-lg mx-auto flex flex-row">
           <div className="w-1/2 flex items-center justify-center">
             <img src={BannerImage} alt="Banner" className="mx-auto" />
           </div>
