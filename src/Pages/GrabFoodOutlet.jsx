@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import BannerImage from "../assets/Images/image 14.png";
+import BannerImage from "../assets/Images/image 14.jpg";
 import OutletCard from "../Components/OutletCard";
 import Breadcrumb from "../Components/Breadcrumb";
 
@@ -48,10 +48,10 @@ function GrabFoodOutlet() {
   ];
   return (
     <div className="min-h-screen">
-      <div className="bg-navbar px-36">
+      <div className="bg-navbar sm:px-36 px-4">
         <Header />
       </div>
-      <div className="py-8 px-36">
+      <div className="sm:px-36 py-8 px-4">
         <div className="mb-12">
           <Breadcrumb />
         </div>
@@ -61,21 +61,22 @@ function GrabFoodOutlet() {
             Outlet
           </h1>
         </div>
-        <div className="flex items-center gap-8">
-          <div className="w-1/2">
+        <div className="flex sm:flex-row flex-col items-center gap-8">
+          <div className="w-full sm:mb-0 sm:w-1/2 mb-4 ">
             {locationItems.map((location) => (
               <OutletCard
+                key={location.locationName}
                 locationName={location.locationName}
                 locationLink={location.locationLink}
               />
             ))}
           </div>
-          <div className="w-1/2">
-            <img src={BannerImage} alt="Banner" className="h-fit" />
+          <div className="sm:w-1/2 w-full ">
+            <img src={BannerImage} alt="Banner" className="sm:h-fit h-auto" />
           </div>
         </div>
       </div>
-      <div className="bg-navbar px-36">
+      <div className="bg-navbar sm:px-36 px-4">
         <Footer />
       </div>
     </div>

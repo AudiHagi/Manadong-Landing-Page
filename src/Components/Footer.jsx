@@ -18,18 +18,26 @@ function Footer() {
         <div className="col-span-2 w-fit flex flex-col text-start justify-center">
           <p className="text-white font-medium">Contact Us</p>
           <div className="py-3">
-            <p className="text-white font-medium">
-              Email :{" "}
-              <span className="text-white mt-2 underline">
-                Manadong@gmail.com
-              </span>
-            </p>
-            <p className="text-white font-medium">
-              Telp :{" "}
-              <span className="text-white mt-2 underline">
-                +62-811-1009-115{" "}
-              </span>
-            </p>
+            <table className="text-white font-medium">
+              <tbody>
+                <tr>
+                  <td>Email</td>
+                  <td>
+                    <span className="text-white ml-4">
+                      : <span className="underline">Manadong@gmail.com</span>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telp</td>
+                  <td>
+                    <span className="text-white ml-4 ">
+                      : <span className="underline">+62-811-1009-115</span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <div className="w-fit flex flex-col text-start justify-center">

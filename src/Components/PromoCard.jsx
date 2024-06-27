@@ -6,7 +6,7 @@ function PromoCard({ image, promoName, promoDetail }) {
       <img
         src={image}
         alt={promoName}
-        className="w-full h-60 object-cover rounded-lg mb-4 mx-auto"
+        className="w-fit h-fit object-cover rounded-lg mb-4 mx-auto"
       />
       <div className="text-start">
         <p className="font-extrabold text-navbar">{promoName}</p>

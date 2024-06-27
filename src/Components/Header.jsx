@@ -27,7 +27,7 @@ function Header() {
   const location = useLocation();
 
   return (
-    <div className="py-2 px-4 sm:px-6 md:px-8 flex flex-wrap items-center bg-slate-600 justify-between">
+    <div className="py-2 px-8 flex flex-wrap items-center bg-slate-600 justify-between">
       <div>
         <Link to="/">
           <img src={Images.logo} alt="Manadong Logo" />

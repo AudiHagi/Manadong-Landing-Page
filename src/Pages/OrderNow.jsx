@@ -11,16 +11,16 @@ function OrderNow() {
     { image: images.shopeeFood, link: "/" },
   ];
   return (
-    <div>
-      <div className="bg-navbar px-36">
+    <div className="">
+      <div className="bg-navbar sm:px-36 px-4 ">
         <Header />
       </div>
       <div className="items-center mt-16">
-        <h1 className="font-bold text-navbar text-center text-[24px]">
+        <h1 className="font-bold text-navbar text-center sm:text-[24px] text-2xl">
           <span className="border-b-4 border-b-manadong">Ord</span>er Now On :
         </h1>
       </div>
-      <div className="mt-16 grid grid-cols-3 gap-0 items-center justify-center justify-items-center">
+      <div className="mt-16 grid sm:grid-cols-3 sm:gap-0 grid-cols-1 gap-4 items-center justify-center justify-items-center">
         {platformItems.map((platform) => (
           <PlatformCard
             key={platform.image}
@@ -29,7 +29,7 @@ function OrderNow() {
           />
         ))}
       </div>
-      <div className="footerOrder bg-navbar px-36">
+      <div className="bg-navbar footerOrder">
         <Footer />
       </div>
     </div>

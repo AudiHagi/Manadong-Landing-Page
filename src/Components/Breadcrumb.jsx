@@ -9,10 +9,10 @@ function Breadcrumb() {
   const segments = pathname.split("/");
   let url = "";
   return (
-    <div className="flex items-center font-medium text-black border rounded-lg">
+    <div className="flex items-center font-medium text-black border border-navbar rounded-lg">
       <div
         onClick={() => navigate(-1)}
-        className="p-2 flex items-center text-manadong border-r border-black cursor-pointer"
+        className="p-2 flex items-center text-manadong border-r border-navbar cursor-pointer"
       >
         <FaArrowLeft className="mr-2" />
         Back

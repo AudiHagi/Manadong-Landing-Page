@@ -148,7 +148,7 @@ function App() {
   ];
   return (
     <div className="min-h-screen">
-      <div className="bg-navbar px-36">
+      <div className="bg-navbar sm:px-36 px-4">
         <Header />
       </div>
 
@@ -156,17 +156,18 @@ function App() {
         <Banner />
       </div>
 
-      <div className="py-8 px-36">
+      <div className="sm:px-36 py-8 px-4 ">
         <div className="mb-8">
           <h1 className="font-bold text-navbar text-start text-[24px]">
             <span className="border-b-4 border-b-manadong">Our</span> Menu
           </h1>
         </div>
-        <div className="grid grid-cols-5 gap-x-4 gap-y-4">
+        <div className="sm:grid-cols-5 grid grid-cols-1  gap-x-4 gap-y-4">
           {menuItems.map((menu) => (
             <Popup
+              key={menu.id}
               trigger={
-                <div>
+                <div className="justify-center flex">
                   <MenuCard
                     image={menu.image}
                     name={menu.name}
@@ -199,15 +200,16 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-pink h-full px-36 py-8 grid grid-cols-3 gap-4">
+      <div className="bg-pink h-full sm:grid-cols-3 sm:px-36 px-4 py-8 grid grid-cols-1 gap-4">
         <div className="flex items-center">
           <h1 className="font-bold text-navbar text-start text-[24px]">
             <span className="border-b-4 border-b-manadong">Pro</span>motion
           </h1>
         </div>
-        <div className="col-span-2 grid grid-cols-3 gap-x-4 items-start">
+        <div className="sm:grid-cols-3 col-span-2 grid grid-cols-1 gap-4 items-start">
           {promoItems.map((promo) => (
             <PromoCard
+              key={promo.id}
               image={promo.image}
               promoName={promo.promoName}
               promoDetail={promo.promoDetail}
@@ -216,15 +218,16 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-lightBlue py-8 px-36">
+      <div className="bg-lightBlue sm:px-36 py-8 px-4">
         <div className="mb-8">
           <h1 className="font-bold text-navbar text-start text-[24px]">
             <span className="border-b-4 border-b-manadong">Rev</span>iews
           </h1>
         </div>
-        <div className="grid grid-cols-3 gap-x-4">
+        <div className="sm:grid-cols-3 grid grid-cols-1 gap-4">
           {reviewItems.map((review) => (
             <ReviewCard
+              key={review.id}
               reviewName={review.reviewName}
               reviewDetail={review.reviewDetail}
             />
@@ -238,15 +241,16 @@ function App() {
         </div>
       </div>
 
-      <div className="py-8 px-36">
+      <div className="sm:px-36 py-8 px-4">
         <div className="mb-8">
           <h1 className="font-bold text-navbar text-start text-[24px]">
             <span className="border-b-4 border-b-manadong">Loc</span>ations
           </h1>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="sm:grid-cols-3 grid grid-cols-1 gap-4">
           {locationItems.map((location) => (
             <LocationCard
+              key={location.id}
               locationName={location.locationName}
               locationDetail={location.locationDetail}
             />
@@ -254,7 +258,7 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-navbar px-36">
+      <div className="bg-navbar sm:px-36 px-4">
         <Footer />
       </div>
     </div>

@@ -7,7 +7,7 @@ function MenuCard({ image, name, isNew }) {
       <img
         src={image}
         alt={name}
-        className="w-52 h-72 object-cover rounded-lg mb-2"
+        className="w-fit h-fit object-cover rounded-lg mb-2"
       />
       <div className="flex items-center justify-center">
         <p className="text-center font-medium text-black">{name}</p>

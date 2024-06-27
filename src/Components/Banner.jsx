@@ -5,8 +5,8 @@ import Button from "./Button";
 function Banner() {
   return (
     <div className="mx-auto">
-      <div className="flex flex-row">
-        <div className="w-1/2 flex items-center justify-center bg-pink text-left">
+      <div className="flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 flex items-center justify-center bg-pink text-center md:text-left">
           <div>
             <p className="text-manadong font-bold text-[42px]">Manadong</p>
             <p className="text-black text-[16px]">
@@ -22,7 +22,7 @@ function Banner() {
             </div>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           <img src={Images.banner} alt="Blog Logo" className="mx-auto" />
         </div>
       </div>

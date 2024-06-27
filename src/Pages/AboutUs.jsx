@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import BannerImage from "../assets/Images/image 14.png";
+import BannerImage from "../assets/Images/image 14.jpg";
 
 function AboutUs() {
   return (
