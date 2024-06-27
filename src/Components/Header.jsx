@@ -12,12 +12,10 @@ function Header() {
     {
       id: 2,
       title: "Eatery",
-      link: "/",
     },
     {
       id: 3,
       title: "News",
-      link: "/",
     },
     {
       id: 4,
@@ -25,8 +23,11 @@ function Header() {
       link: "/AboutUs",
     },
   ];
+
+  const location = useLocation();
+
   return (
-    <div className="py-2 flex items-center bg-slate-600 justify-between">
+    <div className="py-2 px-4 sm:px-6 md:px-8 flex flex-wrap items-center bg-slate-600 justify-between">
       <div>
         <Link to="/">
           <img src={Images.logo} alt="Manadong Logo" />
@@ -34,13 +35,15 @@ function Header() {
       </div>
       <div className="flex gap-4 items-end">
         {menuList.map((menu) => (
-          <div>
-            <Link to={menu.link}>
-              <h2 className="text-white hover:text-manadong text-[18px] cursor-pointer">
-                {menu.title}
-              </h2>
-            </Link>
-          </div>
+          <Link
+            key={menu.id}
+            to={menu.link}
+            className={`px-3 py-2 rounded font-medium hover:text-manadong ${
+              location.pathname === menu.link ? "text-manadong" : ""
+            }`}
+          >
+            {menu.title}
+          </Link>
         ))}
       </div>
     </div>

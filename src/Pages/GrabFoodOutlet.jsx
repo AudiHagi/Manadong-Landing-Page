@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import BannerImage from "../assets/Images/image 14.png";
 import OutletCard from "../Components/OutletCard";
+import Breadcrumb from "../Components/Breadcrumb";
 
 function GrabFoodOutlet() {
   const locationItems = [
@@ -51,6 +52,9 @@ function GrabFoodOutlet() {
         <Header />
       </div>
       <div className="py-8 px-36">
+        <div className="mb-12">
+          <Breadcrumb />
+        </div>
         <div className="mb-4">
           <h1 className="font-bold text-navbar text-start text-2xl">
             <span className="border-b-4 border-b-manadong">Gra</span>bFoot

@@ -6,7 +6,7 @@ import images from "../assets/Images/images";
 
 function OrderNow() {
   const platformItems = [
-    { image: images.grabFood, link: "/GrabFoodOutlet" },
+    { image: images.grabFood, link: "GrabFoodOutlet" },
     { image: images.goFood, link: "/" },
     { image: images.shopeeFood, link: "/" },
   ];

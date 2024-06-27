@@ -26,6 +26,10 @@ const router = createBrowserRouter([
     element: <GrabFoodOutlet />,
   },
   {
+    path: "OrderNow/GrabFoodOutlet",
+    element: <GrabFoodOutlet />,
+  },
+  {
     path: "/detail/:id",
     element: <MenuDetail />,
   },
